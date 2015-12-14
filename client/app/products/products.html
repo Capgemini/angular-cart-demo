@@ -1,0 +1,35 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <form class="navbar-form navbar-left" role="search">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search-text" id="search-text" ng-model="searchText">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+    </form>
+  </div>
+  <div class="row">
+    <div ng-repeat="product in products.products | orderBy: 'name' | filter: searchText">
+      <div class="col-xs-12 col-sm-6 col-md-4 product-box" ng-class="{'outOfStock': product.quantity == 0}">
+        <div class="product-holder">
+          <a href="#/products/{{product._id}}">
+            <img class="front-icon" ng-src="{{product.images[0]}}"/>
+            <!-- Product info: name and price -->
+            <div class="product-details links">
+              <p id='product-name' class='pull-left'>{{product.name}}</p>
+              <p id='product-price' class="pull-right">{{product.price | currency:"£"}}</p>
+            </div>
+          </a>
+          <!-- Add/Remove from cart buttons -->
+          <div class="button-box">
+            <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0">Add to cart</button>
+            <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.removeFromCart(product)' ng-disabled="product.quantity == 0" ng-show="products.productInCart(product)">Remove from cart</button>
+          </div>
+        </div> <!-- end product-holder -->
+      </div> <!-- end col -->
+    </div> <!-- end ng-repeat -->
+  </div> <!-- end row -->
+</div>

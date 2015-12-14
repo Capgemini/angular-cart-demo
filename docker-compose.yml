@@ -1,0 +1,13 @@
+web:
+  build: .
+  ports:
+    - "80:8080"
+  environment:
+    NODE_ENV: production
+    seedDB: 'yes'
+  links:
+    - mongo
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"

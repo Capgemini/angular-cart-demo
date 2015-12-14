@@ -1,6 +1,6 @@
-# angular-clothes-shop
+# angular-cart-demo
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.1.0.
+Example shopping cart application using AngularJS / ExpressJS / MongoDB / NodeJS.
 
 ## Getting Started
 

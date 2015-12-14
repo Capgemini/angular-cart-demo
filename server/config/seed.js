@@ -4,37 +4,74 @@
  */
 
 'use strict';
-import Thing from '../api/thing/thing.model';
+import Product from '../api/product/product.model';
 
-Thing.find({}).removeAsync()
+Product.find({}).removeAsync()
   .then(() => {
-    Thing.create({
-      name: 'Development Tools',
-      info: 'Integration with popular tools such as Bower, Grunt, Babel, Karma, ' +
-             'Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, ' +
-             'Stylus, Sass, and Less.'
+    Product.create( {
+      name: 'Cream dress',
+      description: 'Semi-sheer woven cream tie smock dress',
+      price: 30,
+      "images": [
+        "assets/images/cream-dress.jpg",
+      ],
+      "quantity": 4
     }, {
-      name: 'Server and Client integration',
-      info: 'Built with a powerful and fun stack: MongoDB, Express, ' +
-             'AngularJS, and Node.'
+      name: 'Kimono Jacket',
+      description: 'Denim kimono jacket with open front design',
+      price: 55,
+      "images": [
+        "assets/images/kimono-jacket.jpg",
+      ],
+      "quantity": 10
     }, {
-      name: 'Smart Build System',
-      info: 'Build system ignores `spec` files, allowing you to keep ' +
-             'tests alongside code. Automatic injection of scripts and ' +
-             'styles into your index.html'
+      name: 'Gold dress',
+      description: 'Textured dress with military gold button detail',
+      price: 66,
+      "images": [
+        "assets/images/gold-dress.jpg",
+      ],
+      "quantity": 8
     }, {
-      name: 'Modular Structure',
-      info: 'Best practice client and server structures allow for more ' +
-             'code reusability and maximum scalability'
+      name: 'Split front T-Shirt',
+      description: 'Cotton jersey crew neckline T shirt',
+      price: 30,
+      "images": [
+        "assets/images/white-t-shirt.jpg",
+      ],
+      "quantity": 5
     }, {
-      name: 'Optimized Build',
-      info: 'Build process packs up your templates as a single JavaScript ' +
-             'payload, minifies your scripts/css/images, and rewrites asset ' +
-             'names for caching.'
+      name: 'Green Sweatshirt',
+      description: 'Loop-back sweatshirt with embroidery in washed green',
+      price: 65,
+      "images": [
+        "assets/images/green-sweatshirt.jpg",
+      ],
+      "quantity": 2
     }, {
-      name: 'Deployment Ready',
-      info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
-             'and openshift subgenerators'
+      name: 'Knitted Cape',
+      description: 'Chunky Knitted cape in black rib',
+      price: 60,
+      "images": [
+        "assets/images/black-cape.jpg",
+      ],
+      "quantity": 7
+    }, {
+      name: 'Vintage Tie',
+      description: 'Reclaimed vintage floral bow tie',
+      price: 23,
+      "images": [
+        "assets/images/vintage-tie.jpg",
+      ],
+      "quantity": 8
+    }, {
+      name: 'Blue cap',
+      description: 'Snapback cap with crocodile effect and contrast peak',
+      price: 20,
+      "images": [
+        "assets/images/blue-cap.jpg",
+      ],
+      "quantity": 9
     });
   });
 
