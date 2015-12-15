@@ -18,16 +18,24 @@
           <a href="#/products/{{product._id}}">
             <img class="front-icon" ng-src="{{product.images[0]}}"/>
             <!-- Product info: name and price -->
-            <div class="product-details links">
-              <p id='product-name' class='pull-left'>{{product.name}}</p>
-              <p id='product-price' class="pull-right">{{product.price | currency:"£"}}</p>
+            <div class="product-details links row">
+              <div class="col-xs-7 col-md-5">
+                <p id='product-name' class='pull-left'>{{product.name}}</p>
+              </div>  
+              <div class="col-xs-3 col-md-3">
+                <p id='product-price' class="pull-right">{{product.price | currency:"£"}}</p>
+              </div>
+              <div class="col-xs-3 col-md-3">  
+                <p id="add-button" class="button-box pull-right">
+                  <button class="btn btn-warning ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0" 
+                  ng-show="!products.productInCart(product)">Add</button>
+                  <button class="btn btn-success ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0" 
+                  ng-show="products.productInCart(product)">Add</button>
+                </p>
+              </div>
             </div>
           </a>
-          <!-- Add/Remove from cart buttons -->
-          <div class="button-box">
-            <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0">Add to cart</button>
-            <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.removeFromCart(product)' ng-disabled="product.quantity == 0" ng-show="products.productInCart(product)">Remove from cart</button>
-          </div>
+          
         </div> <!-- end product-holder -->
       </div> <!-- end col -->
     </div> <!-- end ng-repeat -->
