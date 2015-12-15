@@ -4,6 +4,7 @@ Example shopping cart application using AngularJS / ExpressJS / MongoDB / NodeJS
 
 ## Getting Started
 
+
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
