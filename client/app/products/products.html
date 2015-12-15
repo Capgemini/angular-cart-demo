@@ -22,13 +22,15 @@
               <div class="col-xs-7 col-md-5">
                 <p id='product-name' class='pull-left'>{{product.name}}</p>
               </div>  
-              <div class="col-xs-4 col-md-3">
+              <div class="col-xs-3 col-md-3">
                 <p id='product-price' class="pull-right">{{product.price | currency:"£"}}</p>
               </div>
-              <div class="col-xs-5 col-md-4">  
+              <div class="col-xs-3 col-md-3">  
                 <p id="add-button" class="button-box pull-right">
-                  <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0">Add to cart</button>
-                  <button class="btn btn-xlg btn-warning ng-click-active" ng-click='products.removeFromCart(product)' ng-disabled="product.quantity == 0" ng-show="products.productInCart(product)">Remove from cart</button>
+                  <button class="btn btn-warning ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0" 
+                  ng-show="!products.productInCart(product)">Add</button>
+                  <button class="btn btn-success ng-click-active" ng-click='products.addToCart(product)' ng-disabled="product.quantity == 0" 
+                  ng-show="products.productInCart(product)">Add</button>
                 </p>
               </div>
             </div>
