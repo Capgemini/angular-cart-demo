@@ -10,4 +10,10 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install sass
   - bower install
-services: mongodb
+  - chmod +x travis-script.sh
+services:
+  - mongodb
+  - docker
+before_install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" tutum.co
+script: ./travis-script.sh
