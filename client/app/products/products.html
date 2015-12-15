@@ -16,7 +16,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4 product-box" ng-class="{'outOfStock': product.quantity == 0}">
         <div class="product-holder">
           <a href="#/products/{{product._id}}">
-            <img class="front-icon" ng-src="{{product.images[0]}}"/>
+            <img class="front-icon" ng-src="{{product.images[0]}}" title="{{product.description}}"/>
             <!-- Product info: name and price -->
             <div class="product-details links row">
               <div class="col-xs-7 col-md-5">
