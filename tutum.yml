@@ -1,16 +1,25 @@
-mongo:
-  image: 'mongo:latest'
+lb:
+  image: 'tutum/haproxy:latest'
+  links:
+    - web
   ports:
-    - '27017:27017'
-  restart: always
+    - '80:80'
+  roles:
+    - global
 web:
   image: 'tutum.co/tayzlor/angular-cart-demo:latest'
   environment:
     - NODE_ENV=production
     - seedDB=yes
+  expose:
+    - '8080'
   links:
     - mongo
-  ports:
-    - '80:8080'
   restart: always
+  target_num_containers: 3
   autoredeploy: true
+mongo:
+  image: 'mongo:latest'
+  ports:
+    - '27017:27017'
+  restart: always
