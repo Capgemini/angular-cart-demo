@@ -1,13 +1,25 @@
 language: node_js
-sudo: required
+sudo: false
 node_js:
   - 4.2.3
-matrix:
-  fast_finish: true
-  allow_failures:
-    - node_js: 5.1.1
+services:
+  - mongodb
+  - docker
+env:
+  global:
+    - MONGODB_VERSION=3.2.0
 before_script:
   - npm install -g bower grunt-cli
   - gem install sass
   - bower install
-services: mongodb
+  - chmod +x .travis-script.sh
+  # Mongodb service isn't supported yet in the new docker container
+  # builds on travis.ci so we install it manually.
+  # See https://github.com/travis-ci/travis-ci/issues/2125#issuecomment-164898161
+  - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+  - tar xfz mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+  - export PATH=`pwd`/mongodb-linux-x86_64-$MONGODB_VERSION/bin:$PATH
+  - mkdir -p data/db
+  - mongod --dbpath=data/db &
+  - sleep 3
+script: ./.travis-script.sh
