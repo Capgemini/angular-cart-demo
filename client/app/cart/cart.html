@@ -17,7 +17,7 @@
           <a class="links" href="/#/products/{{item._id}}">{{item.name}}</a>
         </td>
         <td class="cart-table-qty">{{item.quantity}}</td>
-        <td>price: {{item.price | currency:"£"}}</td>
+        <td>{{item.price | currency:"£"}}</td>
         <td><button ng-click='cart.removeFromCart(item)' class="btn btn-primary">Remove from cart</button></td>
       </tr>
     </table>
