@@ -2,12 +2,19 @@
 engines:
  csslint:
    enabled: true
+ duplication:
+   enabled: true
+   checks:
+     Similar code:
+       enabled: false
  eslint:
    enabled: true
    checks:
       no-unused-vars:
         enabled: false
       no-undefined:
+        enabled: false
+      no-undef:
         enabled: false
       angular/log:
         enabled: false
@@ -17,7 +24,6 @@ engines:
         enabled: false
       angular/controller-as-vm:
         enabled: false
-
  fixme:
    enabled: false
 
