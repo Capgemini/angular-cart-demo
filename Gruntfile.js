@@ -505,8 +505,8 @@ module.exports = function (grunt) {
           check: {
             lines: 80,
             statements: 80,
-            branches: 80,
-            functions: 80
+            branches: 75,
+            functions: 65
           }
         }
       }

@@ -9,7 +9,7 @@ env:
   global:
     - MONGODB_VERSION=3.2.0
 before_script:
-  - npm install -g bower grunt-cli
+  - npm install -g bower grunt-cli codeclimate-test-reporter
   - gem install sass
   - bower install
   - chmod +x .travis-script.sh

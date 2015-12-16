@@ -1,5 +1,8 @@
 # angular-cart-demo
 
+[![Code Climate](https://codeclimate.com/github/Capgemini/angular-cart-demo/badges/gpa.svg)](https://codeclimate.com/github/Capgemini/angular-cart-demo)
+[![Test Coverage](https://codeclimate.com/github/Capgemini/angular-cart-demo/badges/coverage.svg)](https://codeclimate.com/github/Capgemini/angular-cart-demo/coverage)
+
 Example shopping cart application using AngularJS / ExpressJS / MongoDB / NodeJS.
 
 ## Getting Started
