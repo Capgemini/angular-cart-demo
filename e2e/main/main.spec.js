@@ -7,7 +7,6 @@ describe('Main View', function() {
 
   beforeEach(function() {
     browser.get(config.baseUrl + '/');
-    page = require('./main.po');
   });
 
   it('should have a title', function() {
