@@ -32,6 +32,10 @@ class ProductsController {
   productInCart(product) {
     return this.cart.containsItem(product._id);
   }
+
+  showProductDetail(product) {
+    this.cart.currentItem = product;
+  }
 }
 
 angular.module('angularClothesShopApp')

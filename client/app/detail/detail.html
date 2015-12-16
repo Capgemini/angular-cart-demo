@@ -1,0 +1,23 @@
+<navbar></navbar>
+
+<div class="container">
+ 
+ <div class='cart-products-box'>
+    <table class="cart-table">
+      <tr>
+        <th width="25%">Name</th>
+        <th width="25%">Price</th>
+        <th width="25%">Quantity</th>
+        <th width="25%">Description</th>        
+      </tr>
+      <tr>
+        <td>{{currentItem.name}}</td>
+        <td>{{currentItem.price | currency:"£"}}</td>
+        <td class="cart-table-qty">{{currentItem.quantity}}</td>       
+        <td>{{currentItem.description}}</td>
+        <td rowspan="2"><img class="front-icon" ng-src="{{currentItem.images[0]}}"/></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
