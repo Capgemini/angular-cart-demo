@@ -2,7 +2,7 @@
 
 (function() {
 
-class ProductsController {
+  class ProductsController {
 
   constructor($http, $scope, socket, cartService) {
     this.cart = cartService;
@@ -34,7 +34,7 @@ class ProductsController {
   }
 }
 
-angular.module('angularClothesShopApp')
+  angular.module('angularClothesShopApp')
   .controller('ProductsController', ProductsController);
 
 })();

@@ -6,10 +6,11 @@ angular.module('angularClothesShopApp')
     var items = {};
 
     this.addItem = function(id, name, price, quantity) {
-      if (!this.containsItem(id))
+      if (!this.containsItem(id)) {
         items[id] = {_id: id, name: name, price: price, quantity: quantity};
-      else
+      } else {
         items[id].quantity += 1;
+      }
     };
 
     this.removeItem = function(id) {

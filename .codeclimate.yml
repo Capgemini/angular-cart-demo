@@ -1,0 +1,27 @@
+---
+engines:
+ csslint:
+   enabled: true
+ eslint:
+   enabled: true
+   checks:
+      no-unused-vars:
+        enabled: false
+      no-undefined:
+        enabled: false
+      no-undef:
+        enabled: false
+      angular/log:
+        enabled: false
+      angular/no-service-method:
+        enabled: false
+      angular/document-service:
+        enabled: false
+      angular/controller-as-vm:
+        enabled: false
+ fixme:
+   enabled: false
+
+exclude_paths:
+- Gruntfile.js
+- karma.conf.js

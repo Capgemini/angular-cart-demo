@@ -82,7 +82,7 @@ module.exports = function (grunt) {
       },
       jsTest: {
         files: ['<%= yeoman.client %>/{app,components}/**/*.{spec,mock}.js'],
-        tasks: ['newer:jshint:all', 'wiredep:test', 'karma']
+        tasks: ['wiredep:test', 'karma']
       },
       injectSass: {
         files: ['<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
@@ -117,30 +117,6 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-    },
-
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '<%= yeoman.client %>/.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      server: {
-        options: {
-          jshintrc: '<%= yeoman.server %>/.jshintrc'
-        },
-        src: ['<%= yeoman.server %>/**/!(*.spec|*.integration).js']
-      },
-      serverTest: {
-        options: {
-          jshintrc: '<%= yeoman.server %>/.jshintrc-spec'
-        },
-        src: ['<%= yeoman.server %>/**/*.{spec,integration}.js']
-      },
-      all: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
-      test: {
-        src: ['<%= yeoman.client %>/{app,components}/**/*.{spec,mock}.js']
-      }
     },
 
     jscs: {
@@ -817,7 +793,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
     'test',
     'build'
   ]);

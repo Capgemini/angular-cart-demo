@@ -10,6 +10,9 @@ addons:
 env:
   global:
     - MONGODB_VERSION=3.2.0
+addons:
+  code_climate:
+    repo_token: $CODECLIMATE_REPO_TOKEN
 before_script:
   - npm install -g bower grunt-cli codeclimate-test-reporter
   - gem install sass
