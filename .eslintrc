@@ -28,7 +28,7 @@
     "indent": [2, 2, {SwitchCase: 1}],
     "camelcase": 2,
     "no-undefined": 1,
-    "no-unused-vars": [1, {"vars": "local", "args": "none"}], 
+    "no-unused-vars": 1, 
     "no-use-before-define": 0,
     "curly": 2,
     "no-trailing-spaces": 2,

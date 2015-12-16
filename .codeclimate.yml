@@ -1,0 +1,12 @@
+---
+engines:
+ csslint:
+   enabled: true
+ eslint:
+   enabled: true
+ fixme:
+   enabled: false
+
+exclude_paths:
+- Gruntfile.js
+- karma.conf.js
