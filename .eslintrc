@@ -1,8 +1,6 @@
 {
+  "root": true,
   "parser": "babel-eslint",
-  "plugins": [
-    "angular"
-  ],
   "env": {
     "browser": true,
     "node": true,
@@ -11,7 +9,6 @@
   "globals": {
     "window": true,
     "document": true,
-    "angular": true,
     "jasmine": true,
     "describe": true,
     "it": true,
@@ -22,7 +19,6 @@
     "expect": true,
     "assert": true,
     "sinon": true,
-    "angular": true,
     "console": true,
     "$": true,
     "_": true
@@ -36,11 +32,5 @@
     "no-use-before-define": 0,
     "curly": 2,
     "no-trailing-spaces": 2,
-
-    // Angular
-    "angular/no-service-method": 1,
-    "angular/controller-as-vm": 1,
-    "angular/log": 1,
-    "angular/document-service": 1
   }
 }

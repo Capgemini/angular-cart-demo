@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "angular"
+  ],
+  "globals": {
+    "angular": true
+  },
+  "rules": {
+    // Angular
+    "angular/no-service-method": 1,
+    "angular/controller-as-vm": 1,
+    "angular/log": 1,
+    "angular/document-service": 1
+  }
+}
