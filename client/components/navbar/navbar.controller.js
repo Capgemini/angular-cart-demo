@@ -17,7 +17,7 @@ class NavbarController {
   //end-non-standard
 
   constructor() {
-    }
+  }
 }
 
 angular.module('angularClothesShopApp')

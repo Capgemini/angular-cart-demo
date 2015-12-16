@@ -17,6 +17,6 @@ elif [ -n "$TRAVIS_TAG" ]; then
 else
   npm test
   npm run coverage-report
-  CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN codeclimate-test-reporter < coverage/server/unit/lcov.info
-  CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN codeclimate-test-reporter < coverage/server/integration/lcov.info
+  codeclimate-test-reporter < coverage/server/unit/lcov.info
+  codeclimate-test-reporter < coverage/server/integration/lcov.info
 fi

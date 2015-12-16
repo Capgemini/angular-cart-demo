@@ -31,10 +31,16 @@
     // Code style
     "indent": [2, 2, {SwitchCase: 1}],
     "camelcase": 2,
-    "no-undefined": 2,
-    "no-unused-vars": 2,
+    "no-undefined": 1,
+    "no-unused-vars": [1, {"vars": "local", "args": "none"}], 
     "no-use-before-define": 0,
     "curly": 2,
-    "no-trailing-spaces": 2
+    "no-trailing-spaces": 2,
+
+    // Angular
+    "angular/no-service-method": 1,
+    "angular/controller-as-vm": 1,
+    "angular/log": 1,
+    "angular/document-service": 1
   }
 }
