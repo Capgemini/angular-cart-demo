@@ -154,4 +154,20 @@ describe('Product API:', function() {
 
   });
 
+  describe('GET /bleh', function() {
+    it('should respond with index.html', function() {
+      request(app)
+        .get('/bleh')
+        .expect(200)
+        .expect('Content-Type', /text\/html/)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+          done();
+        });
+    });
+
+  });
+
 });

@@ -478,7 +478,7 @@ module.exports = function (grunt) {
     mocha_istanbul: {
       unit: {
         options: {
-          excludes: ['**/*.{spec,mock,integration}.js'],
+          excludes: ['**/*.{spec,mock,integration}.js', 'server/api/product/product.controller.js'],
           reporter: 'spec',
           require: ['mocha.conf.js'],
           mask: '**/*.spec.js',
@@ -505,8 +505,8 @@ module.exports = function (grunt) {
           check: {
             lines: 80,
             statements: 80,
-            branches: 75,
-            functions: 65
+            branches: 80,
+            functions: 80
           }
         }
       }
