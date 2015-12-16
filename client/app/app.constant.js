@@ -1,5 +1,5 @@
 (function(angular, undefined) {
-'use strict';
+  'use strict';
 
   angular.module('angularClothesShopApp.constants', [])
 
