@@ -6,8 +6,18 @@ lb:
     - '80:80'
   roles:
     - global
+  tags:
+    - production
+mongo:
+  image: 'mongo:latest'
+  ports:
+    - '27017:27017'
+  restart: always
+  tags:
+    - production
 web:
   image: 'tutum.co/tayzlor/angular-cart-demo:latest'
+  autoredeploy: true
   environment:
     - NODE_ENV=production
     - seedDB=yes
@@ -16,10 +26,6 @@ web:
   links:
     - mongo
   restart: always
+  tags:
+    - production
   target_num_containers: 3
-  autoredeploy: true
-mongo:
-  image: 'mongo:latest'
-  ports:
-    - '27017:27017'
-  restart: always
