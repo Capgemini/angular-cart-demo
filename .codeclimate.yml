@@ -2,11 +2,6 @@
 engines:
  csslint:
    enabled: true
- duplication:
-   enabled: true
-   checks:
-     Similar code:
-       enabled: false
  eslint:
    enabled: true
    checks:
