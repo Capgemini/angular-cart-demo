@@ -16,4 +16,7 @@ elif [ -n "$TRAVIS_TAG" ]; then
   docker push tutum.co/$DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG
 else
   npm test
+  npm run coverage-report
+  codeclimate-test-reporter < coverage/server/unit/lcov.info
+  codeclimate-test-reporter < coverage/server/integration/lcov.info
 fi
