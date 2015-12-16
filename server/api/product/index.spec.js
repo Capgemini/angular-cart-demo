@@ -2,12 +2,12 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var productCtrlStub = {
-  index: 'productCtrl.index',
-  show: 'productCtrl.show',
-  create: 'productCtrl.create',
-  update: 'productCtrl.update',
-  destroy: 'productCtrl.destroy'
+var productControllerStub = {
+  index: 'productController.index',
+  show: 'productController.show',
+  create: 'productController.create',
+  update: 'productController.update',
+  destroy: 'productController.destroy'
 };
 
 var routerStub = {
@@ -25,7 +25,7 @@ var productIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './product.controller': productCtrlStub
+  './product.controller': productControllerStub
 });
 
 describe('Product API Router:', function() {
@@ -38,7 +38,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'productCtrl.index')
+        .withArgs('/', 'productController.index')
         .should.have.been.calledOnce;
     });
 
@@ -48,7 +48,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.show', function() {
       routerStub.get
-        .withArgs('/:id', 'productCtrl.show')
+        .withArgs('/:id', 'productController.show')
         .should.have.been.calledOnce;
     });
 
@@ -58,7 +58,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'productCtrl.create')
+        .withArgs('/', 'productController.create')
         .should.have.been.calledOnce;
     });
 
@@ -68,7 +68,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'productCtrl.update')
+        .withArgs('/:id', 'productController.update')
         .should.have.been.calledOnce;
     });
 
@@ -78,7 +78,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.update', function() {
       routerStub.patch
-        .withArgs('/:id', 'productCtrl.update')
+        .withArgs('/:id', 'productController.update')
         .should.have.been.calledOnce;
     });
 
@@ -88,7 +88,7 @@ describe('Product API Router:', function() {
 
     it('should route to product.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'productCtrl.destroy')
+        .withArgs('/:id', 'productController.destroy')
         .should.have.been.calledOnce;
     });
 
