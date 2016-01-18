@@ -20,8 +20,10 @@ else
   # unit + integration tests
   npm test
 
+  # grunt retire.js vulnerability scanner
+  grunt retire
+
   # protractor end-to-end tests
-  npm run update-webdriver
   grunt test:e2e
 
   # code coverage reports

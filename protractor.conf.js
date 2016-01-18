@@ -34,7 +34,6 @@ var config = {
   capabilities: {
     'browserName': 'chrome',
     'name': 'Angular Cart Demo E2E',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'build': process.env.TRAVIS_BUILD_NUMBER
   },
 

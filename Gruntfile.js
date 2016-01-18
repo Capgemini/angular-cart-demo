@@ -18,7 +18,9 @@ module.exports = function (grunt) {
     protractor: 'grunt-protractor-runner',
     buildcontrol: 'grunt-build-control',
     istanbul_check_coverage: 'grunt-mocha-istanbul',
-    ngconstant: 'grunt-ng-constant'
+    ngconstant: 'grunt-ng-constant',
+    retire: 'grunt-retire',
+    sauce_connect: 'grunt-sauce-connect-launcher'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -501,6 +503,19 @@ module.exports = function (grunt) {
       }
     },
 
+    sauce_connect: {
+      options: {
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY
+      }
+    },
+
+    retire: {
+      js: ['client/**/*', 'server/**/*'],
+      options: {
+      }
+    },
+
     env: {
       test: {
         NODE_ENV: 'test'
@@ -726,6 +741,8 @@ module.exports = function (grunt) {
           'wiredep:client',
           'postcss',
           'express:dev',
+          'sauce_connect',
+          'sauce-connect-close',
           'protractor'
         ]);
       }

@@ -14,11 +14,14 @@ addons:
   code_climate:
     repo_token: $CODECLIMATE_REPO_TOKEN
 before_script:
-  - npm install -g bower grunt-cli codeclimate-test-reporter
+  - npm install -g bower grunt-cli codeclimate-test-reporter protractor
   - gem install sass
   - bower install
   - chmod +x .travis-script.sh
   - pip install --user django docker-scripts
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - webdriver-manager update
   # Mongodb service isn't supported yet in the new docker container
   # builds on travis.ci so we install it manually.
   # See https://github.com/travis-ci/travis-ci/issues/2125#issuecomment-164898161

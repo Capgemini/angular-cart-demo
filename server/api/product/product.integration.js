@@ -1,6 +1,7 @@
 'use strict';
 
 var app = require('../..');
+
 import request from 'supertest';
 
 var newProduct;
@@ -13,6 +14,7 @@ describe('Product API:', function() {
     beforeEach(function(done) {
       request(app)
         .get('/api/products')
+        .set('Accept', 'application/json')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
