@@ -742,8 +742,8 @@ module.exports = function (grunt) {
           'postcss',
           'express:dev',
           'sauce_connect',
-          'sauce-connect-close',
-          'protractor'
+          'protractor',
+          'sauce-connect-close'
         ]);
       }
     }

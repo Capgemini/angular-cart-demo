@@ -36,4 +36,8 @@ else
   docker run -v $(pwd):/app -v $(pwd)/lynis-logs:/var/log dduportal/lynis:2.1.0 \
     --auditor "Automator" --quick audit dockerfile /app/Dockerfile
 
+  grunt serve
+  docker run -u zap -i owasp/zap2docker-stable zap-cli quick-scan -sc \
+    -o '-config api.disablekey=true' -s xss,sqli --spider "http://localhost:9000"
+
 fi
