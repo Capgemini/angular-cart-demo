@@ -11,7 +11,7 @@ describe('Main View', function() {
   });
 
   it('should have a title', function() {
-    
+
     expect(browser.getTitle()).toEqual('Angular Cart Demo');
   });
 });

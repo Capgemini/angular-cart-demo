@@ -13,9 +13,12 @@ var config = {
   baseUrl: 'http://localhost:' + (process.env.PORT || '9000'),
 
   // Credientials for Saucelabs
-  sauceUser: process.env.SAUCE_USERNAME,
+  // sauceUser: process.env.SAUCE_USERNAME,
 
-  sauceKey: process.env.SAUCE_ACCESS_KEY,
+  // sauceKey: process.env.SAUCE_ACCESS_KEY,
+
+  seleniumServerJar: '/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar',
+  chromeDriver: '/usr/local/lib/node_modules/protractor/selenium/chromedriver',
 
   // list of files / patterns to load in the browser
   specs: [
@@ -34,7 +37,6 @@ var config = {
   capabilities: {
     'browserName': 'chrome',
     'name': 'Angular Cart Demo E2E',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'build': process.env.TRAVIS_BUILD_NUMBER
   },
 
@@ -45,11 +47,15 @@ var config = {
   // assertion framework if working with mocha.
   framework: 'jasmine2',
 
+  allScriptsTimeout: 40000,
+  getPageTimeout: 40000,
+
   // ----- Options to be passed to minijasminenode -----
   //
   // See the full list at https://github.com/jasmine/jasmine-npm
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 360000,
+    includeStackTrace: true,
     print: function() {}  // for jasmine-spec-reporter
   },
 

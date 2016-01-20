@@ -1,4 +1,6 @@
-FROM mhart/alpine-node:4.2.3
+FROM mhart/alpine-node:4.2.4
+
+MAINTAINER Capgemini
 
 WORKDIR /src
 
