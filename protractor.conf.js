@@ -13,12 +13,12 @@ var config = {
   baseUrl: 'http://localhost:' + (process.env.PORT || '9000'),
 
   // Credientials for Saucelabs
-  // sauceUser: process.env.SAUCE_USERNAME,
+  sauceUser: process.env.SAUCE_USERNAME,
 
-  // sauceKey: process.env.SAUCE_ACCESS_KEY,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
-  seleniumServerJar: '/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar',
-  chromeDriver: '/usr/local/lib/node_modules/protractor/selenium/chromedriver',
+  // seleniumServerJar: '/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar',
+  // chromeDriver: '/usr/local/lib/node_modules/protractor/selenium/chromedriver',
 
   // list of files / patterns to load in the browser
   specs: [
@@ -47,8 +47,8 @@ var config = {
   // assertion framework if working with mocha.
   framework: 'jasmine2',
 
-  allScriptsTimeout: 40000,
-  getPageTimeout: 40000,
+  allScriptsTimeout: 60000,
+  getPageTimeout: 60000,
 
   // ----- Options to be passed to minijasminenode -----
   //

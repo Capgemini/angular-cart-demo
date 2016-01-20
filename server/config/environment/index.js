@@ -36,8 +36,14 @@ var all = {
   // MongoDB connection options
   mongo: {
     options: {
+      auto_reconnect: true,
       db: {
         safe: true
+      },
+      server: {
+        socketOptions: {
+          keepAlive: 1
+        }
       }
     }
   }

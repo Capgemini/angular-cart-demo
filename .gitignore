@@ -7,4 +7,5 @@ client/bower_components
 dist
 coverage
 /server/config/local.env.js
+client/app/app.constant.js
 npm-debug.log
