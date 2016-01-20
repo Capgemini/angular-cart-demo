@@ -13,9 +13,9 @@ var config = {
   baseUrl: 'http://localhost:' + (process.env.PORT || '9000'),
 
   // Credientials for Saucelabs
-  sauceUser: process.env.SAUCE_USERNAME,
+  // sauceUser: process.env.SAUCE_USERNAME,
 
-  sauceKey: process.env.SAUCE_ACCESS_KEY,
+  // sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   seleniumServerJar: '/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar',
   chromeDriver: '/usr/local/lib/node_modules/protractor/selenium/chromedriver',
