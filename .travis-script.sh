@@ -4,16 +4,28 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
   # Handle master builds
   echo "Building Docker image for ${TRAVIS_BRANCH}"
   grunt build
-  docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
-  docker build -t $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:latest .
-  docker push $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:latest
+  if [ "$DOCKER_REGISTRY" == "hub.docker.com" ] || [ -z "$DOCKER_REGISTRY" ]; then 
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    docker build -t $DOCKER_USERNAME/angular-cart-demo:latest .
+    docker push $DOCKER_USERNAME/angular-cart-demo:latest
+  else
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
+    docker build -t $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:latest .
+    docker push $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:latest
+  fi
 elif [ -n "$TRAVIS_TAG" ]; then
   # Handle tagged builds
   echo "Building Docker image for ${TRAVIS_TAG}"
   grunt build
-  docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
-  docker build -t $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG .
-  docker push $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG
+  if [ "$DOCKER_REGISTRY" == "hub.docker.com" ] || [ -z "$DOCKER_REGISTRY" ]; then 
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    docker build -t $DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG .
+    docker push $DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG
+  else
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" $DOCKER_REGISTRY
+    docker build -t $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG .
+    docker push $DOCKER_REGISTRY/$DOCKER_USERNAME/angular-cart-demo:$TRAVIS_TAG
+  fi
 else
   # unit + integration tests
   npm test
