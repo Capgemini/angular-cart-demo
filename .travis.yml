@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-  - 4.2.4
+  - 4.3.0
 rvm:
   - 2.0.0
 services:
@@ -18,16 +18,18 @@ addons:
   code_climate:
     repo_token: $CODECLIMATE_REPO_TOKEN
 before_install:
-  - sudo apt-get install -y libkrb5-dev jq
+  - sudo apt-get install -y libkrb5-dev
 before_script:
   - npm install -g bower grunt-cli codeclimate-test-reporter protractor
   - gem install sass
   - bower install
   - chmod +x .travis-script.sh
+  - chmod +x .deploy.sh
   - pip install --user django
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - webdriver-manager update
+  - wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
   # Mongodb service isn't supported yet in the new docker container
   # builds on travis.ci so we install it manually.
   # See https://github.com/travis-ci/travis-ci/issues/2125#issuecomment-164898161
@@ -40,6 +42,6 @@ before_script:
 script: ./.travis-script.sh
 deploy:
   provider: script
-  script: deploy.sh
+  script: ./.deploy.sh
   on:
     tags: true

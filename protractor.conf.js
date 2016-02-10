@@ -47,8 +47,8 @@ var config = {
   // assertion framework if working with mocha.
   framework: 'jasmine2',
 
-  allScriptsTimeout: 60000,
-  getPageTimeout: 60000,
+  allScriptsTimeout: 240000,
+  getPageTimeout: 240000,
 
   // ----- Options to be passed to minijasminenode -----
   //

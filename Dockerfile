@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:4.2.4
+FROM mhart/alpine-node:4.3.0
 
 MAINTAINER Capgemini
 
