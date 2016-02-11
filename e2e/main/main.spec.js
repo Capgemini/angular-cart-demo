@@ -8,6 +8,7 @@ describe('Main View', function() {
   beforeEach(function() {
 
     browser.get(config.baseUrl + '/');
+    browser.refresh();
   });
 
   it('should have a title', function() {
