@@ -3,7 +3,8 @@
 angular.module('angularClothesShopApp')
   .service('cartService', function () {
 
-    var items = {};
+    var items = {};    
+    var currentItem = {};
 
     this.addItem = function(id, name, price, quantity) {
       if (!this.containsItem(id)) {

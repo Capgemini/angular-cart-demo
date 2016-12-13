@@ -2,7 +2,7 @@
 
 <div class="container">
   <!-- Empty cart -->
-  <div ng-show="cart.items < 1">Your cart is currently empty..</div>
+  <div ng-show="cart.items < 1"><b>Your cart is currently empty..</b></div>
   <!-- Items in the shopping cart -->
   <div class='cart-products-box'>
     <table class="cart-table">
@@ -13,9 +13,7 @@
         <th width="25%">Action</th>
       </tr>
       <tr ng-repeat='item in cart.items'>
-        <td>
-          <a class="links" href="/#/products/{{item._id}}">{{item.name}}</a>
-        </td>
+        <td>{{item.name}}</td>
         <td class="cart-table-qty">{{item.quantity}}</td>
         <td>{{item.price | currency:"£"}}</td>
         <td><button ng-click='cart.removeFromCart(item)' class="btn btn-primary">Remove from cart</button></td>

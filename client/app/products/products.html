@@ -20,7 +20,7 @@
             <!-- Product info: name and price -->
             <div class="product-details links row">
               <div class="col-xs-7 col-md-5">
-                <p id='product-name' class='pull-left'>{{product.name}}</p>
+                <a href='/detail' id='product-name' class='pull-left' ng-click='products.showProductDetail(product)'>{{product.name}}</a>
               </div>  
               <div class="col-xs-3 col-md-3">
                 <p id='product-price' class="pull-right">{{product.price | currency:"£"}}</p>
